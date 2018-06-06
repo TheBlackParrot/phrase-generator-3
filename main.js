@@ -21,13 +21,36 @@ const marks = ["?", "!", "."];
 // actually just turn the lists into objects fuck it ugh fuck english
 // ... nouns are probably ok, verbs are not, turn verbs into objects: {"present": "run", "past": "ran", "ing": "running", "s": "runs"}
 
-class Noun {
-	constructor(word, type = "common") {
+class Word {
+	constructor(word, mods = [], ending = "") {
 		this.word = word;
-		this.final = word;
+		this.ending = ending;
+		this.mods = mods;
+	}
+}
+
+class Noun extends Word {
+	constructor(word, type = "common", mods = [], ending = "") {
+		super(word, mods, ending);
+
 		this.plural = false;
 		this.possessive = false;
 		this.type = type;
+
+		this.final = word.replace("!", "");
+
+		if(mods.length) {
+			let _ = this;
+			mods.map(function(mod) {
+				_.modify(mod);
+			});
+		} else {
+			if(word.indexOf("/") != -1) {
+				this.final = word.split("/")[0];
+			}			
+		}
+
+		this.ending = "";
 	}
 
 	modify(mod) {
@@ -35,6 +58,8 @@ class Noun {
 
 		switch(mod) {
 			case "plural":
+				this.plural = true;
+
 				if(word.indexOf("/") != -1) {
 					this.final = word.split("/")[1]; // has a special plural form
 					return this.final;
@@ -64,7 +89,8 @@ class Noun {
 				break;
 
 			case "possessive":
-				// hmmm
+				this.possessive = true;
+
 				var lastChar = word.slice(-1);
 				var secondToLastChar = word.slice(-2, -1);
 
@@ -80,68 +106,43 @@ class Noun {
 	}
 }
 
+class Verb extends Word {
+	constructor(word, mods = [], ending = "") {
+		super(word, mods, ending);
+
+		this.final = word;
+		this.tense = "present";
+
+		if(mods.length) {
+			let _ = this;
+			mods.map(function(mod) {
+				_.modify(mod);
+			});
+		}
+	}
+
+	modify(mod) {
+		switch(mod) {
+			case "s":
+			case "past":
+			case "ing":
+			case "future":
+				this.tense = mod;
+				this.final = lists.verbs[this.word][mod];
+				return this.final;
+				break;
+
+			default:
+				return this.final;
+				break;
+		}
+	}
+}
+
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function modifyNoun(noun, mod) {
-	switch(mod) {
-		case "plural":
-			if(noun.indexOf("/") != -1) {
-				return noun.split("/")[1]; // has a special plural form
-			}
-
-			if(noun.indexOf("!") != -1) {
-				return noun.replace("!", ""); // plural is the same as singular
-			}
-
-			var lastChar = noun.slice(-1);
-			var last2Chars = noun.slice(-2);
-
-			if(hs.indexOf(last2Chars) != -1 || es.indexOf(lastChar) != -1) {
-				noun += "es";
-			} else if(lastChar == "y") {
-				if(vowels.indexOf(noun.slice(-2, -1)) != -1) {
-					noun += "s";
-				} else {
-					noun = noun.slice(0, -1) + "ies";
-				}
-			} else {
-				noun += "s";
-			}
-
-			return noun;
-			break;
-
-		case "possessive":
-			// hmmm
-			var lastChar = noun.slice(-1);
-			var secondToLastChar = noun.slice(-2, -1);
-
-			if(lastChar == "s" && vowels.indexOf(secondToLastChar) != -1) {
-				return noun + "'";
-			}
-
-			return noun + "'s";
-			break;
-	}
-}
-
-function modifyVerb(verb, mod) {
-	switch(mod) {
-		case "s":
-		case "past":
-		case "ing":
-		case "future":
-			return lists.verbs[verb][mod];
-			break;
-
-		default:
-			return verb;
-			break;
-	}
 }
 
 function getNoun(mods, type) {
@@ -178,24 +179,11 @@ function getNoun(mods, type) {
 			break;
 
 		default:
+			type = "common";
 			list = lists.nouns;
 			break;
 	}
-	chosen = list[getRandomInt(0, list.length)];
-	//console.log("NOUN: " + chosen);
-
-	if(!mods.length) {
-		if(chosen.indexOf("/") != -1) {
-			return chosen.split("/")[0];
-		} else {
-			return chosen.replace("!", "");
-		}
-	}
-
-	mods.map(function(mod) {
-		//console.log("MOD: " + mod);
-		chosen = modifyNoun(chosen, mod);
-	});
+	chosen = new Noun(list[getRandomInt(0, list.length)], type, mods);
 
 	return chosen;
 }
@@ -212,12 +200,7 @@ function getAdverb() {
 
 function getVerb(mods) {
 	let verbs = Object.keys(lists.verbs);
-	let chosen = verbs[getRandomInt(0, verbs.length)];
-
-	mods.map(function(mod) {
-		//console.log("MOD: " + mod);
-		chosen = modifyVerb(chosen, mod);
-	});
+	let chosen = new Verb(verbs[getRandomInt(0, verbs.length)], mods);
 
 	return chosen;
 }
@@ -241,7 +224,7 @@ function parseElement(element) {
 		case "place":
 		case "item":
 		case "noun":
-			return getNoun(mods.slice(1), mods[0]) + ending;
+			return getNoun(mods.slice(1), mods[0]).final + ending;
 			break;
 
 		case "article":
@@ -257,7 +240,7 @@ function parseElement(element) {
 			break;
 
 		case "verb":
-			return getVerb(mods.slice(1)) + ending;
+			return getVerb(mods.slice(1)).final + ending;
 			break;
 
 		case "amount":
