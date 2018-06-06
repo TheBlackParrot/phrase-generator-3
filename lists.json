@@ -39,25 +39,110 @@
 		"article"
 	],
 
-	"verbs": [
-		"run/ran",
-		"walk",
-		"crouch",
-		"die",
-		"carry",
-		"push",
-		"shove",
-		"kick",
-		"breathe",
-		"drink/drank",
-		"lie",
-		"sleep",
-		"snooze",
-		"nap",
-		"vibrate",
-		"shake",
-		"panic"
-	],
+	"verbs": {
+		"run": {
+			"past": "ran",
+			"s": "runs",
+			"ing": "running",
+			"future": "will run"
+		},
+		"walk": {
+			"past": "walked",
+			"s": "walks",
+			"ing": "walking",
+			"future": "will walk"
+		},
+		"crouch": {
+			"past": "crouched",
+			"s": "crouches",
+			"ing": "crouching",
+			"future": "will crouch"
+		},
+		"die": {
+			"past": "died",
+			"s": "dies",
+			"ing": "dying",
+			"future": "will die"
+		},
+		"carry": {
+			"past": "carried",
+			"s": "carries",
+			"ing": "carrying",
+			"future": "will carry"
+		},
+		"push": {
+			"past": "pushed",
+			"s": "pushes",
+			"ing": "pushing",
+			"future": "will push"
+		},
+		"shove": {
+			"past": "shoved",
+			"s": "shoves",
+			"ing": "shoving",
+			"future": "will shove"
+		},
+		"kick": {
+			"past": "kicked",
+			"s": "kicks",
+			"ing": "kicking",
+			"future": "will kick"
+		},
+		"breathe": {
+			"past": "breathed",
+			"s": "breathes",
+			"ing": "breathing",
+			"future": "will breathe"
+		},
+		"drink": {
+			"past": "drank",
+			"s": "drinks",
+			"ing": "drinking",
+			"future": "will drink"
+		},
+		"lie": {
+			"past": "lied",
+			"s": "lies",
+			"ing": "lying",
+			"future": "will lie"
+		},
+		"sleep": {
+			"past": "slept",
+			"s": "sleeps",
+			"ing": "sleeping",
+			"future": "will sleep"
+		},
+		"snooze": {
+			"past": "snoozed",
+			"s": "snoozes",
+			"ing": "snoozing",
+			"future": "will snooze"
+		},
+		"nap": {
+			"past": "napped",
+			"s": "naps",
+			"ing": "napping",
+			"future": "will nap"
+		},
+		"vibrate": {
+			"past": "vibrated",
+			"s": "vibrates",
+			"ing": "vibrating",
+			"future": "will vibrate"
+		},
+		"shake": {
+			"past": "shook",
+			"s": "shakes",
+			"ing": "shaking",
+			"future": "will run"
+		},
+		"panic": {
+			"past": "panicked",
+			"s": "panics",
+			"ing": "panicking",
+			"future": "will panic"
+		}
+	},
 
 	"adjectives": [
 		"red",
@@ -100,7 +185,8 @@
 	"adverbs": [
 		"briskly",
 		"slowly",
-		"quickly"
+		"quickly",
+		"excitedly"
 	],
 
 	"propers": {
@@ -166,9 +252,9 @@
 			"Overwatch",
 			"Fortnite",
 			"Mount Rushmore",
-			"Hoover Dam",
-			"The Empire State Building",
-			"The White House"
+			"the Hoover Dam",
+			"the Empire State Building",
+			"the White House"
 		]
 	},
 
@@ -310,16 +396,16 @@
 			"chance": 1,
 			"choices": [
 				"watch out for article noun!",
-				"watch out for article noun:plural",
+				"watch out for article noun:plural!",
 				"watch out for article adjective noun!",
 				"watch out for article adjective noun:plural!",
-				"watch out for noun:plural",
+				"watch out for noun:plural!",
 				"watch out for adjective noun:plural!",
 				"watch out for article verb:ing noun!",
-				"watch out for article verb:ing noun:plural",
+				"watch out for article verb:ing noun:plural!",
 				"watch out for article verb:ing adjective noun!",
 				"watch out for article verb:ing adjective noun:plural!",
-				"watch out for verb:ing noun:plural",
+				"watch out for verb:ing noun:plural!",
 				"watch out for verb:ing adjective noun:plural!"
 			]
 		},
@@ -335,6 +421,63 @@
 				"verb:ing noun:plural are killing the adjective noun industry",
 				"verb:ing adjective noun:plural are killing the noun industry",
 				"verb:ing adjective noun:plural are killing the adjective noun industry"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"next thing you know, article noun will walk into place",
+				"next thing you know, article adjective noun will walk into place",
+				"next thing you know, article noun:plural will walk into place",
+				"next thing you know, article adjective noun:plural will walk into place"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"so article noun and article noun walk into a bar...",
+				"so article adjective noun and article noun walk into a bar...",
+				"so article noun and article adjective noun walk into a bar...",
+				"so article adjective noun and article adjective noun walk into a bar..."
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"congratulations! you've won article noun!",
+				"congratulations! you've won article adjective noun!",
+				"congratulations! you've won article noun:plural!",
+				"congratulations! you've won article adjective noun:plural!"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"stop verb:ing noun:plural",
+				"stop verb:ing adjective noun:plural"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"adjective noun:plural. *chef's kiss*",
+				"adverb verb:ing noun:plural. *chef's kiss*",
+				"adverb verb:ing adjective noun:plural. *chef's kiss*"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"adjective noun:plural doesn't belong in item",
+				"article adjective noun:plural doesn't belong in item",
+				"adjective noun:plural doesn't belong in item, they verb too adverb!",
+				"article adjective noun:plural doesn't belong in item, they verb too adverb!"
 			]
 		}
 	]

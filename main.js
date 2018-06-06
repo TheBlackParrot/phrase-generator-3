@@ -21,6 +21,65 @@ const marks = ["?", "!", "."];
 // actually just turn the lists into objects fuck it ugh fuck english
 // ... nouns are probably ok, verbs are not, turn verbs into objects: {"present": "run", "past": "ran", "ing": "running", "s": "runs"}
 
+class Noun {
+	constructor(word, type = "common") {
+		this.word = word;
+		this.final = word;
+		this.plural = false;
+		this.possessive = false;
+		this.type = type;
+	}
+
+	modify(mod) {
+		let word = this.final;
+
+		switch(mod) {
+			case "plural":
+				if(word.indexOf("/") != -1) {
+					this.final = word.split("/")[1]; // has a special plural form
+					return this.final;
+				}
+
+				if(word.indexOf("!") != -1) {
+					this.final = word.replace("!", ""); // plural is the same as singular
+					return this.final;
+				}
+
+				var lastChar = word.slice(-1);
+				var last2Chars = word.slice(-2);
+
+				if(hs.indexOf(last2Chars) != -1 || es.indexOf(lastChar) != -1) {
+					word += "es";
+				} else if(lastChar == "y") {
+					if(vowels.indexOf(word.slice(-2, -1)) != -1) {
+						word += "s";
+					} else {
+						word = word.slice(0, -1) + "ies";
+					}
+				} else {
+					word += "s";
+				}
+
+				this.final = word;
+				break;
+
+			case "possessive":
+				// hmmm
+				var lastChar = word.slice(-1);
+				var secondToLastChar = word.slice(-2, -1);
+
+				if(lastChar == "s" && vowels.indexOf(secondToLastChar) != -1) {
+					this.final = word + "'";
+					return this.final;
+				}
+
+				this.final = word + "'s";
+				return this.final;
+				break;
+		}		
+	}
+}
+
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
@@ -72,68 +131,15 @@ function modifyNoun(noun, mod) {
 
 function modifyVerb(verb, mod) {
 	switch(mod) {
-		case "ing":
-			if(verb.indexOf("/") != -1) {
-				verb = verb.split("/")[0]
-			}
-
-			if(verb.slice(-1) == "e") {
-				if(vowels.indexOf(verb.slice(-2, -1)) != -1) {
-					return verb.slice(0, -2) + "ying";
-				} else {
-					return verb.slice(0, -1) + "ing";
-				}
-			} else if(vowels.indexOf(verb.slice(-2, -1)) != -1 && vowels.indexOf(verb.slice(-1)) == -1) {
-				if(verb.slice(-1) == "r") {
-					return verb + "ing";
-				} else if(verb.slice(-1) == "c") {
-					return verb + "king";
-				} else {
-					// christ
-					if(vowels.indexOf(verb.slice(-3, -2)) != -1) {
-						return verb + "ing";
-					} else {
-						return verb + verb.slice(-1) + "ing";
-					}
-				}
-			}
-
-			return verb + "ing";
-			break;
-
-		case "past":
-			if(verb.indexOf("/") != -1) {
-				return verb.split("/")[1];
-			}
-
-			if(verb.slice(-1) == "e") {
-				return verb + "d";
-			} else if(verb.slice(-1) == "y" && vowels.indexOf(verb.slice(-2, -1)) == -1) {
-				return verb.slice(0, -1) + "ied";
-			} else if(verb.slice(-1) == "c") {
-					return verb + "ked";
-			} else if(vowels.indexOf(verb.slice(-1)) == -1 && vowels.indexOf(verb.slice(-2, -1)) != -1) {
-				if(verb.slice(-3, -2) == verb.slice(-4, -3) || (vowels.indexOf(verb.slice(-3, -2)) != -1 && verb.slice(-3, -2) == verb.slice(-2, -1))) {
-					// extreme fringe case: the game, the movie
-					return verb + "ed";
-				} else {
-					return verb + verb.slice(-1) + "ed";
-				}
-			}
-
-			return verb + "ed";
-			break;
-
 		case "s":
-			if(hs.indexOf(verb.slice(-2)) != -1) {
-				return verb + "es";
-			}
-
-			return verb + "s";
+		case "past":
+		case "ing":
+		case "future":
+			return lists.verbs[verb][mod];
 			break;
 
-		case "future":
-			return "will " + verb;
+		default:
+			return verb;
 			break;
 	}
 }
@@ -205,15 +211,8 @@ function getAdverb() {
 }
 
 function getVerb(mods) {
-	let chosen = lists.verbs[getRandomInt(0, lists.verbs.length)];
-
-	if(!mods.length) {
-		if(chosen.indexOf("/") != -1) {
-			return chosen.split("/")[0];
-		} else {
-			return chosen.replace("!", "");
-		}
-	}
+	let verbs = Object.keys(lists.verbs);
+	let chosen = verbs[getRandomInt(0, verbs.length)];
 
 	mods.map(function(mod) {
 		//console.log("MOD: " + mod);
