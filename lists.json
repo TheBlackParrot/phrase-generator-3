@@ -1,0 +1,341 @@
+{
+	"nouns": [
+		"wolf/wolves",
+		"dog",
+		"pig",
+		"cat",
+		"kitten",
+		"knife/knives",
+		"apple",
+		"banana",
+		"orange",
+		"fox",
+		"grape",
+		"wine",
+		"beer",
+		"hammer",
+		"rocket",
+		"money",
+		"keyboard",
+		"mouse",
+		"computer",
+		"laptop",
+		"drink",
+		"bottle",
+		"piano",
+		"trumpet",
+		"guitar",
+		"tongue",
+		"leg",
+		"face",
+		"arm",
+		"eye",
+		"balloon",
+		"flower",
+		"daisy",
+		"dolphin",
+		"tweet",
+		"post",
+		"article"
+	],
+
+	"verbs": [
+		"run/ran",
+		"walk",
+		"crouch",
+		"die",
+		"carry",
+		"push",
+		"shove",
+		"kick",
+		"breathe",
+		"drink/drank",
+		"lie",
+		"sleep",
+		"snooze",
+		"nap",
+		"vibrate",
+		"shake",
+		"panic"
+	],
+
+	"adjectives": [
+		"red",
+		"orange",
+		"yellow",
+		"green",
+		"blue",
+		"indigo",
+		"violet",
+		"purple",
+		"pink",
+		"brown",
+		"black",
+		"white",
+		"big",
+		"large",
+		"small",
+		"tiny",
+		"teeny-tiny",
+		"vast",
+		"cold",
+		"hot",
+		"warm",
+		"lukewarm",
+		"cool",
+		"happy",
+		"sad",
+		"frustrated",
+		"irritated",
+		"angry",
+		"joyful",
+		"outrageous",
+		"salty",
+		"rough",
+		"smooth",
+		"expensive",
+		"cheap"
+	],
+
+	"adverbs": [
+		"briskly",
+		"slowly",
+		"quickly"
+	],
+
+	"propers": {
+		"places": [
+			"New York",
+			"Germany",
+			"United States",
+			"Canada",
+			"France",
+			"London",
+			"China",
+			"Shanghai",
+			"Hong Kong",
+			"North Korea",
+			"South Korea",
+			"Pyongyang",
+			"Seoul",
+			"Taiwan",
+			"Seattle",
+			"Oregon",
+			"Washington",
+			"California",
+			"Los Angeles",
+			"Dallas",
+			"Texas",
+			"Mexico",
+			"Brazil",
+			"Japan",
+			"Tokyo",
+			"the Atlantic Ocean",
+			"the Pacific Ocean",
+			"the Arctic Ocean"
+		],
+
+		"fictional_places": [
+			"Gotham City"
+		],
+
+		"people": [
+			"Jennifer Anniston",
+			"Tom Hanks",
+			"Barack Obama",
+			"Hillary Clinton",
+			"George Bush",
+			"Larry King",
+			"Bruce Springsteen",
+			"Jennifer Lawrence",
+			"Taylor Swift",
+			"Rihanna",
+			"Cher"
+		],
+
+		"fictional_people": [
+			"King Kong",
+			"Godzilla",
+			"Pikachu",
+			"Genji",
+			"Brigette",
+			"Tracer"
+		],
+
+		"items": [
+			"Overwatch",
+			"Fortnite",
+			"Mount Rushmore",
+			"Hoover Dam",
+			"The Empire State Building",
+			"The White House"
+		]
+	},
+
+	"amounts": [
+		"so many",
+		"very few",
+		"quite a few",
+		"not a lot of",
+		"numerous",
+		"hundereds of",
+		"thounsands of",
+		"millions of",
+		"billions of",
+		"trillions of",
+		"0",
+		"14",
+		"42",
+		"69",
+		"420"
+	],
+
+	"phrases": [
+		{
+			"chance": 15,
+			"choices": [
+				"adjective noun",
+				"adjective noun:plural"
+			]
+		},
+
+		{
+			"chance": 10,
+			"choices": [
+				"verb:ing noun",
+				"verb:ing adjective noun",
+				"verb:ing noun:plural",
+				"verb:ing adjective noun:plural",
+				"adverb verb:ing noun",
+				"adverb verb:ing adjective noun",
+				"adverb verb:ing noun:plural",
+				"adverb verb:ing adjective noun:plural"
+			]
+		},
+
+		{
+			"chance": 7,
+			"choices": [
+				"person:possessive adjective noun",
+				"person:possessive adjective noun:plural",
+				"person:possessive verb:ing noun",
+				"person:possessive verb:ing adjective noun",
+				"person:possessive verb:ing noun:plural",
+				"person:possessive verb:ing adjective noun:plural",
+				"person:possessive adverb verb:ing noun",
+				"person:possessive adverb verb:ing adjective noun",
+				"person:possessive adverb verb:ing noun:plural",
+				"person:possessive adverb verb:ing adjective noun:plural"
+			]
+		},
+
+		{
+			"chance": 7,
+			"choices": [
+				"article noun verb:s adverb",
+				"article adjective noun verb:s adverb",
+				"article noun:plural verb adverb",
+				"article adjective noun:plural verb:s adverb",
+				"article noun verb:past adverb",
+				"article adjective noun verb:past adverb",
+				"article noun:plural verb:past adverb",
+				"article adjective noun:plural verb:past adverb"
+			]
+		},
+
+		{
+			"chance": 5,
+			"choices": [
+				"amount adjective noun:plural"
+			]
+		},
+
+		{
+			"chance": 3,
+			"choices": [
+				"person:possessive noun is verb:ing again...",
+				"person:possessive adjective noun is verb:ing again...",
+				"person:possessive noun:plural are verb:ing again...",
+				"person:possessive adjective noun:plural are verb:ing again..."
+			]
+		},
+
+		{
+			"chance": 3,
+			"choices": [
+				"is your noun verb:ing?",
+				"is your adjective noun verb:ing?",
+				"are your noun:plural verb:ing?",
+				"are your adjective noun:plural verb:ing?",
+				"is your noun adjective?",
+				"are your noun:plural adjective?"
+			]
+		},
+
+		{
+			"chance": 3,
+			"choices": [
+				"only in place will you find adjective noun:plural",
+				"only in place will you find article adjective noun"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"draw me like one of your adjective noun:plural"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"adjective noun:plural? definitely",
+				"adjective noun:plural? heck yes",
+				"adjective noun:plural? sure!"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"can i get article adjective noun?",
+				"can i get article adjective noun with a side of adjective noun:plural?",
+				"can i get adjective noun:plural?",
+				"can i get adjective noun:plural with a side of adjective noun:plural?"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"watch out for article noun!",
+				"watch out for article noun:plural",
+				"watch out for article adjective noun!",
+				"watch out for article adjective noun:plural!",
+				"watch out for noun:plural",
+				"watch out for adjective noun:plural!",
+				"watch out for article verb:ing noun!",
+				"watch out for article verb:ing noun:plural",
+				"watch out for article verb:ing adjective noun!",
+				"watch out for article verb:ing adjective noun:plural!",
+				"watch out for verb:ing noun:plural",
+				"watch out for verb:ing adjective noun:plural!"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"noun:plural are killing the noun industry",
+				"noun:plural are killing the adjective noun industry",
+				"adjective noun:plural are killing the noun industry",
+				"adjective noun:plural are killing the adjective noun industry",
+				"verb:ing noun:plural are killing the noun industry",
+				"verb:ing noun:plural are killing the adjective noun industry",
+				"verb:ing adjective noun:plural are killing the noun industry",
+				"verb:ing adjective noun:plural are killing the adjective noun industry"
+			]
+		}
+	]
+}
