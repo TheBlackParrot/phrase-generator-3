@@ -1,0 +1,324 @@
+[
+	{
+		"chance": 15,
+		"choices": [
+			"adjective noun",
+			"adjective noun:plural"
+		]
+	},
+
+	{
+		"chance": 10,
+		"choices": [
+			"verb:ing noun",
+			"verb:ing adjective noun",
+			"verb:ing noun:plural",
+			"verb:ing adjective noun:plural",
+			"adverb verb:ing noun",
+			"adverb verb:ing adjective noun",
+			"adverb verb:ing noun:plural",
+			"adverb verb:ing adjective noun:plural"
+		]
+	},
+
+	{
+		"chance": 7,
+		"choices": [
+			"person:possessive adjective noun",
+			"person:possessive adjective noun:plural",
+			"person:possessive verb:ing noun",
+			"person:possessive verb:ing adjective noun",
+			"person:possessive verb:ing noun:plural",
+			"person:possessive verb:ing adjective noun:plural",
+			"person:possessive adverb verb:ing noun",
+			"person:possessive adverb verb:ing adjective noun",
+			"person:possessive adverb verb:ing noun:plural",
+			"person:possessive adverb verb:ing adjective noun:plural"
+		]
+	},
+
+	{
+		"chance": 7,
+		"choices": [
+			"article noun verb:s adverb",
+			"article adjective noun verb:s adverb",
+			"article noun:plural verb adverb",
+			"article adjective noun:plural verb adverb",
+			"article noun verb:past adverb",
+			"article adjective noun verb:past adverb",
+			"article noun:plural verb:past adverb",
+			"article adjective noun:plural verb:past adverb"
+		]
+	},
+
+	{
+		"chance": 5,
+		"choices": [
+			"amount adjective noun:plural"
+		]
+	},
+
+	{
+		"chance": 3,
+		"choices": [
+			"person:possessive noun is verb:ing again...",
+			"person:possessive adjective noun is verb:ing again...",
+			"person:possessive noun:plural are verb:ing again...",
+			"person:possessive adjective noun:plural are verb:ing again..."
+		]
+	},
+
+	{
+		"chance": 3,
+		"choices": [
+			"is your noun verb:ing?",
+			"is your adjective noun verb:ing?",
+			"are your noun:plural verb:ing?",
+			"are your adjective noun:plural verb:ing?",
+			"is your noun adjective?",
+			"are your noun:plural adjective?"
+		]
+	},
+
+	{
+		"chance": 3,
+		"choices": [
+			"only in place will you find adjective noun:plural",
+			"only in place will you find article adjective noun"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"draw me like one of your adjective noun:plural"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"adjective noun:plural? definitely",
+			"adjective noun:plural? heck yes",
+			"adjective noun:plural? sure!"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"can i get article adjective noun?",
+			"can i get article adjective noun with a side of adjective noun:plural?",
+			"can i get adjective noun:plural?",
+			"can i get adjective noun:plural with a side of adjective noun:plural?"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"watch out for article noun!",
+			"watch out for article noun:plural!",
+			"watch out for article adjective noun!",
+			"watch out for article adjective noun:plural!",
+			"watch out for noun:plural!",
+			"watch out for adjective noun:plural!",
+			"watch out for article verb:ing noun!",
+			"watch out for article verb:ing noun:plural!",
+			"watch out for article verb:ing adjective noun!",
+			"watch out for article verb:ing adjective noun:plural!",
+			"watch out for verb:ing noun:plural!",
+			"watch out for verb:ing adjective noun:plural!"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"noun:plural are killing the noun industry",
+			"noun:plural are killing the adjective noun industry",
+			"adjective noun:plural are killing the noun industry",
+			"adjective noun:plural are killing the adjective noun industry",
+			"verb:ing noun:plural are killing the noun industry",
+			"verb:ing noun:plural are killing the adjective noun industry",
+			"verb:ing adjective noun:plural are killing the noun industry",
+			"verb:ing adjective noun:plural are killing the adjective noun industry"
+		],
+		"modifiers": [
+			"capitalize"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"next thing you know, article noun will walk into place",
+			"next thing you know, article adjective noun will walk into place",
+			"next thing you know, article noun:plural will walk into place",
+			"next thing you know, article adjective noun:plural will walk into place"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"so article noun and article noun walk into a bar...",
+			"so article adjective noun and article noun walk into a bar...",
+			"so article noun and article adjective noun walk into a bar...",
+			"so article adjective noun and article adjective noun walk into a bar..."
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"congratulations! you've won article noun!",
+			"congratulations! you've won article adjective noun!",
+			"congratulations! you've won article noun:plural!",
+			"congratulations! you've won article adjective noun:plural!"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"stop article verb:ing noun:plural",
+			"stop article verb:ing adjective noun:plural"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"adjective noun:plural. *chef's kiss*",
+			"adverb verb:ing noun:plural. *chef's kiss*",
+			"adverb verb:ing adjective noun:plural. *chef's kiss*"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"adjective noun:plural don't belong in item",
+			"article adjective noun:plural don't belong in item",
+			"adjective noun:plural don't belong in item, they verb too adverb!",
+			"article adjective noun:plural don't belong in item, they verb too adverb!"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"adjective noun:plural are the bomb dot com!",
+			"adjective noun:plural are the best!",
+			"person:possessive adjective noun is the best!",
+			"person:possessive verb:ing adjective noun is the best!"
+		]
+	},
+
+	{
+		"chance": 2,
+		"choices": [
+			"@ verb:ing adjective noun number",
+			"@ adjective noun number",
+			"@ noun noun:plural",
+			"@ verb:ing adjective noun noun:plural",
+			"@ adjective noun noun:plural",
+			"@ verb:ing adjective noun",
+			"@ adjective noun"
+		],
+		"modifiers": [
+			"nospace",
+			"capitalize"
+		],
+		"prepend": "follow me on twitter: "
+	},
+
+	{
+		"chance": 2,
+		"choices": [
+			"that darn adjective noun!",
+			"those darn adjective noun:plural!",
+			"that dang adjective noun!",
+			"those dang adjective noun:plural!"
+		]
+	},
+
+	{
+		"chance": 2,
+		"choices": [
+			"i want that adjective noun",
+			"he wants that adjective noun",
+			"she wants that adjective noun",
+			"they want that adjective noun",
+			"i want that verb:ing adjective noun",
+			"he wants that verb:ing adjective noun",
+			"she wants that verb:ing adjective noun",
+			"they want that verb:ing adjective noun",
+			"i need that adjective noun",
+			"he needs that adjective noun",
+			"she needs that adjective noun",
+			"they need that adjective noun",
+			"i need that verb:ing adjective noun",
+			"he needs that verb:ing adjective noun",
+			"she needs that verb:ing adjective noun",
+			"they need that verb:ing adjective noun"
+		]
+	},
+
+	{
+		"chance": 2,
+		"choices": [
+			"i've verb:past article noun before",
+			"i've totally verb:past article noun before",
+			"you better believe i've verb:past article noun before",
+			"of course i've verb:past article noun before!",
+			"you've never verb:past article noun before?",
+			"i've verb:past article adjective noun before",
+			"i've totally verb:past article adjective noun before",
+			"you better believe i've verb:past article adjective noun before",
+			"of course i've verb:past article adjective noun before!",
+			"you've never verb:past article adjective noun before?"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"my one and only desire: verb:ing with article adjective noun",
+			"my one and only desire: verb:ing with adjective noun:plural",
+			"my one and only desire: article adjective noun",
+			"my one and only desire: adjective noun:plural",
+			"my one and only desire: article verb:ing adjective noun",
+			"my one and only desire: verb:ing adjective noun:plural"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"can article noun verb?",
+			"will article noun verb?",
+			"should article noun verb?",
+			"what noun verb:s?"
+		]
+	},
+
+	{
+		"chance": 1,
+		"choices": [
+			"top 10 most adjective noun:plural",
+			"top 10 least adjective noun:plural",
+			"top 20 most adjective noun:plural",
+			"top 20 least adjective noun:plural",
+			"top 10 most adjective noun:plural of item",
+			"top 10 least adjective noun:plural of item",
+			"top 20 most adjective noun:plural of item",
+			"top 20 least adjective noun:plural of item",
+			"top 10 most adjective noun:plural in place",
+			"top 10 least adjective noun:plural in place",
+			"top 20 most adjective noun:plural in place",
+			"top 20 least adjective noun:plural in place"
+		]
+	}
+]

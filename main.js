@@ -1,4 +1,13 @@
-const lists = require("./lists.json");
+//const lists = require("./lists.json");
+const lists = {
+	nouns: require("./nouns.json"),
+	verbs: require("./verbs.json"),
+	adjectives: require("./adjectives.json"),
+	adverbs: require("./adverbs.json"),
+	propers: require("./propers.json"),
+	amounts: require("./amounts.json"),
+	phrases: require("./phrases.json")
+}
 const vowels = ["a", "e", "i", "o", "u"];
 const hs = ["ch", "sh"];
 const es = ["o", "x", "s"];
@@ -327,12 +336,7 @@ function getPhrase() {
 	}
 
 	if(mods.indexOf("capitalize") != -1) {
-		let skip = false;
 		parts.map(function(element) {
-			if(!skip) {
-				skip = true;
-				return;
-			}
 			element.final = element.final.slice(0, 1).toUpperCase() + element.final.slice(1);
 		});
 	}
@@ -363,6 +367,4 @@ function getPhrase() {
 	return final;
 }
 
-for(let x = 0; x < 30; x++) {
-	console.log(getPhrase());
-}
+console.log(getPhrase());

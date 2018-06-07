@@ -1,0 +1,518 @@
+{
+	"run": {
+		"past": "ran",
+		"s": "runs",
+		"ing": "running",
+		"future": "will run"
+	},
+	"walk": {
+		"past": "walked",
+		"s": "walks",
+		"ing": "walking",
+		"future": "will walk"
+	},
+	"crouch": {
+		"past": "crouched",
+		"s": "crouches",
+		"ing": "crouching",
+		"future": "will crouch"
+	},
+	"die": {
+		"past": "died",
+		"s": "dies",
+		"ing": "dying",
+		"future": "will die"
+	},
+	"carry": {
+		"past": "carried",
+		"s": "carries",
+		"ing": "carrying",
+		"future": "will carry"
+	},
+	"push": {
+		"past": "pushed",
+		"s": "pushes",
+		"ing": "pushing",
+		"future": "will push"
+	},
+	"shove": {
+		"past": "shoved",
+		"s": "shoves",
+		"ing": "shoving",
+		"future": "will shove"
+	},
+	"kick": {
+		"past": "kicked",
+		"s": "kicks",
+		"ing": "kicking",
+		"future": "will kick"
+	},
+	"breathe": {
+		"past": "breathed",
+		"s": "breathes",
+		"ing": "breathing",
+		"future": "will breathe"
+	},
+	"drink": {
+		"past": "drank",
+		"s": "drinks",
+		"ing": "drinking",
+		"future": "will drink"
+	},
+	"lie": {
+		"past": "lied",
+		"s": "lies",
+		"ing": "lying",
+		"future": "will lie"
+	},
+	"sleep": {
+		"past": "slept",
+		"s": "sleeps",
+		"ing": "sleeping",
+		"future": "will sleep"
+	},
+	"snooze": {
+		"past": "snoozed",
+		"s": "snoozes",
+		"ing": "snoozing",
+		"future": "will snooze"
+	},
+	"nap": {
+		"past": "napped",
+		"s": "naps",
+		"ing": "napping",
+		"future": "will nap"
+	},
+	"vibrate": {
+		"past": "vibrated",
+		"s": "vibrates",
+		"ing": "vibrating",
+		"future": "will vibrate"
+	},
+	"shake": {
+		"past": "shook",
+		"s": "shakes",
+		"ing": "shaking",
+		"future": "will run"
+	},
+	"panic": {
+		"past": "panicked",
+		"s": "panics",
+		"ing": "panicking",
+		"future": "will panic"
+	},
+	"brush": {
+		"past": "brushed",
+		"s": "brushes",
+		"ing": "brushing",
+		"future": "will brush"
+	},
+	"invite": {
+		"past": "invited",
+		"s": "invites",
+		"ing": "inviting",
+		"future": "will invite"
+	},
+	"hover": {
+		"past": "hovered",
+		"s": "hovers",
+		"ing": "hovering",
+		"future": "will hover"
+	},
+	"doubt": {
+		"past": "doubted",
+		"s": "doubts",
+		"ing": "doubting",
+		"future": "will doubt"
+	},
+	"risk": {
+		"past": "risked",
+		"s": "risks",
+		"ing": "risking",
+		"future": "will risk"
+	},
+	"glue": {
+		"past": "glued",
+		"s": "glues",
+		"ing": "gluing",
+		"future": "will glue"
+	},
+	"disapprove": {
+		"past": "disapproved",
+		"s": "disapproves",
+		"ing": "disapproving",
+		"future": "will disapprove"
+	},
+	"moan": {
+		"past": "moaned",
+		"s": "moans",
+		"ing": "moaning",
+		"future": "will moan"
+	},
+	"crack": {
+		"past": "cracked",
+		"s": "cracks",
+		"ing": "cracking",
+		"future": "will crack"
+	},
+	"try": {
+		"past": "tried",
+		"s": "tries",
+		"ing": "trying",
+		"future": "will try"
+	},
+	"invent": {
+		"past": "invented",
+		"s": "invents",
+		"ing": "inventing",
+		"future": "will invent"
+	},
+	"fool": {
+		"past": "fooled",
+		"s": "fools",
+		"ing": "fooling",
+		"future": "will fool"
+	},
+	"fix": {
+		"past": "fixed",
+		"s": "fixes",
+		"ing": "fixing",
+		"future": "will fix"
+	},
+	"fetch": {
+		"past": "fetched",
+		"s": "fetches",
+		"ing": "fetching",
+		"future": "will fetch"
+	},
+	"scribble": {
+		"past": "scribbled",
+		"s": "scribbles",
+		"ing": "scribbling",
+		"future": "will scribble"
+	},
+	"draw": {
+		"past": "drew",
+		"s": "draws",
+		"ing": "drawing",
+		"future": "will draw"
+	},
+	"paint": {
+		"past": "painted",
+		"s": "paints",
+		"ing": "painting",
+		"future": "will paint"
+	},
+	"encourage": {
+		"past": "encouraged",
+		"s": "encourages",
+		"ing": "encouraging",
+		"future": "will encourage"
+	},
+	"soak": {
+		"past": "soaked",
+		"s": "soaks",
+		"ing": "soaking",
+		"future": "will soak"
+	},
+	"surprise": {
+		"past": "surprised",
+		"s": "surprises",
+		"ing": "surprising",
+		"future": "will surprise"
+	},
+	"educate": {
+		"past": "educated",
+		"s": "educates",
+		"ing": "educating",
+		"future": "will educate"
+	},
+	"reach": {
+		"past": "reached",
+		"s": "reaches",
+		"ing": "reaching",
+		"future": "will reach"
+	},
+	"wreck": {
+		"past": "wrecked",
+		"s": "wrecks",
+		"ing": "wrecking",
+		"future": "will wreck"
+	},
+	"reject": {
+		"past": "rejected",
+		"s": "rejects",
+		"ing": "rejecting",
+		"future": "will reject"
+	},
+	"prepare": {
+		"past": "prepared",
+		"s": "prepares",
+		"ing": "preparing",
+		"future": "will prepare"
+	},
+	"applaud": {
+		"past": "applauded",
+		"s": "applauds",
+		"ing": "applauding",
+		"future": "will applaud"
+	},
+	"bump": {
+		"past": "bumped",
+		"s": "bumps",
+		"ing": "bumping",
+		"future": "will bump"
+	},
+	"tie": {
+		"past": "tied",
+		"s": "ties",
+		"ing": "tying",
+		"future": "will tie"
+	},
+	"precede": {
+		"past": "preceded",
+		"s": "precedes",
+		"ing": "preceding",
+		"future": "will precede"
+	},
+	"bleach": {
+		"past": "bleached",
+		"s": "bleaches",
+		"ing": "bleaching",
+		"future": "will bleach"
+	},
+	"crash": {
+		"past": "crashed",
+		"s": "crashes",
+		"ing": "crashing",
+		"future": "will crash"
+	},
+	"scatter": {
+		"past": "scattered",
+		"s": "scatters",
+		"ing": "scattering",
+		"future": "will scatter"
+	},
+	"shelter": {
+		"past": "sheltered",
+		"s": "shelters",
+		"ing": "sheltering",
+		"future": "will shelter"
+	},
+	"whip": {
+		"past": "whipped",
+		"s": "whips",
+		"ing": "whipping",
+		"future": "will whip"
+	},
+	"peck": {
+		"past": "pecked",
+		"s": "pecks",
+		"ing": "pecking",
+		"future": "will peck"
+	},
+	"blind": {
+		"past": "blinded",
+		"s": "blinds",
+		"ing": "blinding",
+		"future": "will blind"
+	},
+	"suck": {
+		"past": "sucked",
+		"s": "sucks",
+		"ing": "sucking",
+		"future": "will suck"
+	},
+	"tickle": {
+		"past": "tickled",
+		"s": "tickles",
+		"ing": "tickling",
+		"future": "will tickle"
+	},
+	"share": {
+		"past": "shared",
+		"s": "shares",
+		"ing": "sharing",
+		"future": "will share"
+	},
+	"join": {
+		"past": "joined",
+		"s": "joins",
+		"ing": "joining",
+		"future": "will join"
+	},
+	"thank": {
+		"past": "thanked",
+		"s": "thanks",
+		"ing": "thanking",
+		"future": "will thank"
+	},
+	"pray": {
+		"past": "prayed",
+		"s": "prays",
+		"ing": "praying",
+		"future": "will pray"
+	},
+	"face": {
+		"past": "faceed",
+		"s": "faces",
+		"ing": "facing",
+		"future": "will face"
+	},
+	"load": {
+		"past": "loaded",
+		"s": "loads",
+		"ing": "loading",
+		"future": "will load"
+	},
+	"spray": {
+		"past": "sprayed",
+		"s": "sprays",
+		"ing": "spraying",
+		"future": "will spray"
+	},
+	"trust": {
+		"past": "trusted",
+		"s": "trusts",
+		"ing": "trusting",
+		"future": "will trust"
+	},
+	"complete": {
+		"past": "completed",
+		"s": "completes",
+		"ing": "completing",
+		"future": "will complete"
+	},
+	"compete": {
+		"past": "competed",
+		"s": "competes",
+		"ing": "competing",
+		"future": "will compete"
+	},
+	"love": {
+		"past": "loved",
+		"s": "loves",
+		"ing": "loving",
+		"future": "will love"
+	},
+	"employ": {
+		"past": "employed",
+		"s": "employs",
+		"ing": "employing",
+		"future": "will employ"
+	},
+	"book": {
+		"past": "booked",
+		"s": "books",
+		"ing": "booking",
+		"future": "will book"
+	},
+	"delight": {
+		"past": "delighted",
+		"s": "delights",
+		"ing": "delighting",
+		"future": "will delight"
+	},
+	"satisfy": {
+		"past": "satisfied",
+		"s": "satisfies",
+		"ing": "satisfying",
+		"future": "will satisfy"
+	},
+	"kiss": {
+		"past": "kissed",
+		"s": "kisses",
+		"ing": "kissing",
+		"future": "will kiss"
+	},
+	"hug": {
+		"past": "hugged",
+		"s": "hugs",
+		"ing": "hugging",
+		"future": "will hug"
+	},
+	"bury": {
+		"past": "buried",
+		"s": "buries",
+		"ing": "burying",
+		"future": "will bury"
+	},
+	"report": {
+		"past": "reported",
+		"s": "reports",
+		"ing": "reporting",
+		"future": "will report"
+	},
+	"phone": {
+		"past": "phoned",
+		"s": "phones",
+		"ing": "phoning",
+		"future": "will phone"
+	},
+	"call": {
+		"past": "called",
+		"s": "calls",
+		"ing": "calling",
+		"future": "will call"
+	},
+	"yell": {
+		"past": "yelled",
+		"s": "yells",
+		"ing": "yelling",
+		"future": "will yell"
+	},
+	"yodel": {
+		"past": "yodeled",
+		"s": "yodels",
+		"ing": "yodeling",
+		"future": "will yodel"
+	},
+	"rob": {
+		"past": "robbed",
+		"s": "robs",
+		"ing": "robbing",
+		"future": "will rob"
+	},
+	"ask": {
+		"past": "asked",
+		"s": "asks",
+		"ing": "asking",
+		"future": "will ask"
+	},
+	"poke": {
+		"past": "poked",
+		"s": "pokes",
+		"ing": "poking",
+		"future": "will poke"
+	},
+	"name": {
+		"past": "named",
+		"s": "names",
+		"ing": "naming",
+		"future": "will name"
+	},
+	"nail": {
+		"past": "nailed",
+		"s": "nails",
+		"ing": "nailing",
+		"future": "will nail"
+	},
+	"puncture": {
+		"past": "punctured",
+		"s": "punctures",
+		"ing": "puncturing",
+		"future": "will puncture"
+	},
+	"sail": {
+		"past": "sailed",
+		"s": "sails",
+		"ing": "sailing",
+		"future": "will sail"		
+	},
+	"surf": {
+		"past": "surfed",
+		"s": "surfs",
+		"ing": "surfing",
+		"future": "will surf"
+	}
+}
