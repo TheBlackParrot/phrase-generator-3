@@ -254,6 +254,10 @@ function parseElement(element) {
 			part = getAmount();
 			break;
 
+		case "number":
+			part = new Word(getRandomInt(0, 10000).toString());
+			break;
+
 		default:
 			part = new Word(element);
 			break;
@@ -282,6 +286,12 @@ function reparseElements(elements) {
 							}
 						}
 					}
+
+					if(art.word != "the") {
+						if(vowels.indexOf(elements[idx+1].final.slice(0, 1)) != -1) {
+							art.word = art.final = "an";
+						}
+					}
 				}
 			}
 			continue;
@@ -294,15 +304,15 @@ function reparseElements(elements) {
 function getPhraseElements() {
 	let choices = [];
 	lists.phrases.map(function(phraseData) {
-		choices = choices.concat(Array(phraseData.chance).fill(phraseData.choices)); // wew
+		choices = choices.concat(Array(phraseData.chance).fill(phraseData)); // wew
 	});
 
-	let set = choices[getRandomInt(0, choices.length)];
-	return set[getRandomInt(0, set.length)].split(" ");
+	return choices[getRandomInt(0, choices.length)];
 }
 
 function getPhrase() {
-	let elements = getPhraseElements();
+	let data = getPhraseElements();
+	let elements = data.choices[getRandomInt(0, data.choices.length)].split(" ");
 	let parts = [];
 
 	elements.map(function(element) {
@@ -311,13 +321,37 @@ function getPhrase() {
 
 	parts = reparseElements(parts);
 
+	let mods = [];
+	if("modifiers" in data) {
+		mods = data.modifiers;
+	}
+
+	if(mods.indexOf("capitalize") != -1) {
+		let skip = false;
+		parts.map(function(element) {
+			if(!skip) {
+				skip = true;
+				return;
+			}
+			element.final = element.final.slice(0, 1).toUpperCase() + element.final.slice(1);
+		});
+	}
+
 	let final = [];
 	parts.map(function(part) {
 		final.push(part.modified);
 	});
 
-	final = final.join(" ");
-	
+	if("prepend" in data) {
+		final = [data.prepend].concat(final);
+	}
+
+	if(mods.indexOf("nospace") != -1) {
+		final = final.join("");
+	} else {
+		final = final.join(" ");
+	}
+
 	if(!getRandomInt(0, 200)) {
 		let newFinal = "";
 		for(let idx = 0; idx < final.length; idx++) {

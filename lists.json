@@ -457,8 +457,8 @@
 		{
 			"chance": 1,
 			"choices": [
-				"stop verb:ing noun:plural",
-				"stop verb:ing adjective noun:plural"
+				"stop article verb:ing noun:plural",
+				"stop article verb:ing adjective noun:plural"
 			]
 		},
 
@@ -474,10 +474,108 @@
 		{
 			"chance": 1,
 			"choices": [
-				"adjective noun:plural doesn't belong in item",
-				"article adjective noun:plural doesn't belong in item",
-				"adjective noun:plural doesn't belong in item, they verb too adverb!",
-				"article adjective noun:plural doesn't belong in item, they verb too adverb!"
+				"adjective noun:plural don't belong in item",
+				"article adjective noun:plural don't belong in item",
+				"adjective noun:plural don't belong in item, they verb too adverb!",
+				"article adjective noun:plural don't belong in item, they verb too adverb!"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"adjective noun:plural are the bomb dot com!",
+				"adjective noun:plural are the best!",
+				"person:possessive adjective noun is the best!",
+				"person:possessive verb:ing adjective noun is the best!"
+			]
+		},
+
+		{
+			"chance": 2,
+			"choices": [
+				"@ verb:ing adjective noun number",
+				"@ adjective noun number",
+				"@ noun noun:plural",
+				"@ verb:ing adjective noun noun:plural",
+				"@ adjective noun noun:plural",
+				"@ verb:ing adjective noun",
+				"@ adjective noun"
+			],
+			"modifiers": [
+				"nospace",
+				"capitalize"
+			],
+			"prepend": "follow me on twitter: "
+		},
+
+		{
+			"chance": 2,
+			"choices": [
+				"that darn adjective noun!",
+				"those darn adjective noun:plural!",
+				"that dang adjective noun!",
+				"those dang adjective noun:plural!"
+			]
+		},
+
+		{
+			"chance": 2,
+			"choices": [
+				"i want that adjective noun",
+				"he wants that adjective noun",
+				"she wants that adjective noun",
+				"they want that adjective noun",
+				"i want that verb:ing adjective noun",
+				"he wants that verb:ing adjective noun",
+				"she wants that verb:ing adjective noun",
+				"they want that verb:ing adjective noun",
+				"i need that adjective noun",
+				"he needs that adjective noun",
+				"she needs that adjective noun",
+				"they need that adjective noun",
+				"i need that verb:ing adjective noun",
+				"he needs that verb:ing adjective noun",
+				"she needs that verb:ing adjective noun",
+				"they need that verb:ing adjective noun"
+			]
+		},
+
+		{
+			"chance": 2,
+			"choices": [
+				"i've verb:past article noun before",
+				"i've totally verb:past article noun before",
+				"you better believe i've verb:past article noun before",
+				"of course i've verb:past article noun before!",
+				"you've never verb:past article noun before?",
+				"i've verb:past article adjective noun before",
+				"i've totally verb:past article adjective noun before",
+				"you better believe i've verb:past article adjective noun before",
+				"of course i've verb:past article adjective noun before!",
+				"you've never verb:past article adjective noun before?"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"my one and only desire: verb:ing with article adjective noun",
+				"my one and only desire: verb:ing with adjective noun:plural",
+				"my one and only desire: article adjective noun",
+				"my one and only desire: adjective noun:plural",
+				"my one and only desire: article verb:ing adjective noun",
+				"my one and only desire: verb:ing adjective noun:plural"
+			]
+		},
+
+		{
+			"chance": 1,
+			"choices": [
+				"can article noun verb?",
+				"will article noun verb?",
+				"should article noun verb?",
+				"what noun verb:s?"
 			]
 		}
 	]
