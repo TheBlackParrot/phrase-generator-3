@@ -3,29 +3,18 @@ const vowels = ["a", "e", "i", "o", "u"];
 const hs = ["ch", "sh"];
 const es = ["o", "x", "s"];
 const articles = ["a", "the"];
-const marks = ["?", "!", "."];
-
-//
-//
-//
-//
-//			TURN ALL OF THE ELEMENTS INTO CLASSES!!!
-//			EXTREME FRINGE CASE: "a vast keyboards died slowly"
-//			need to check for plural nouns in articles where the noun isn't immediately following an article, e.g. "article adjective noun"
-//			would probably help with other stuff in the long run too i suppose
-//
-//
-//
-//
-
-// actually just turn the lists into objects fuck it ugh fuck english
-// ... nouns are probably ok, verbs are not, turn verbs into objects: {"present": "run", "past": "ran", "ing": "running", "s": "runs"}
+const marks = ["?", "!", ".", ","];
 
 class Word {
 	constructor(word, mods = [], ending = "") {
 		this.word = word;
+		this.final = word;
 		this.ending = ending;
 		this.mods = mods;
+	}
+
+	get modified() {
+		return this.final + this.ending;
 	}
 }
 
@@ -49,8 +38,6 @@ class Noun extends Word {
 				this.final = word.split("/")[0];
 			}			
 		}
-
-		this.ending = "";
 	}
 
 	modify(mod) {
@@ -139,6 +126,31 @@ class Verb extends Word {
 	}
 }
 
+class Adjective extends Word {
+	constructor(word, ending = "") {
+		super(word, [], ending);
+	}
+}
+
+class Adverb extends Word {
+	constructor(word, ending = "") {
+		super(word, [], ending);
+	}
+}
+
+class Amount extends Word {
+	constructor(word, ending = "") {
+		// these aren't really words but it'll work fine
+		super(word, [], ending);
+	}
+}
+
+class Article extends Word {
+	constructor(word, ending = "") {
+		super(word, [], ending);
+	}
+}
+
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
@@ -183,31 +195,25 @@ function getNoun(mods, type) {
 			list = lists.nouns;
 			break;
 	}
-	chosen = new Noun(list[getRandomInt(0, list.length)], type, mods);
 
-	return chosen;
+	return new Noun(list[getRandomInt(0, list.length)], type, mods);
 }
 
 function getAdjective() {
-	// ez clap
-	return lists.adjectives[getRandomInt(0, lists.adjectives.length)];
+	return new Adjective(lists.adjectives[getRandomInt(0, lists.adjectives.length)]);
 }
 
 function getAdverb() {
-	// too ez
-	return lists.adverbs[getRandomInt(0, lists.adverbs.length)];
+	return new Adverb(lists.adverbs[getRandomInt(0, lists.adverbs.length)]);
 }
 
 function getVerb(mods) {
 	let verbs = Object.keys(lists.verbs);
-	let chosen = new Verb(verbs[getRandomInt(0, verbs.length)], mods);
-
-	return chosen;
+	return new Verb(verbs[getRandomInt(0, verbs.length)], mods);
 }
 
 function getAmount() {
-	// plz
-	return lists.amounts[getRandomInt(0, lists.amounts.length)];
+	return new Amount(lists.amounts[getRandomInt(0, lists.amounts.length)]);
 }
 
 function parseElement(element) {
@@ -218,62 +224,67 @@ function parseElement(element) {
 	}
 
 	let mods = element.split(":");
+	let part;
 
 	switch(mods[0]) {
 		case "person":
 		case "place":
 		case "item":
 		case "noun":
-			return getNoun(mods.slice(1), mods[0]).final + ending;
+			part = getNoun(mods.slice(1), mods[0]);
 			break;
 
 		case "article":
-			return "=article";
+			part = "=article";
 			break;
 
 		case "adjective":
-			return getAdjective() + ending;
+			part = getAdjective();
 			break;
 
 		case "adverb":
-			return getAdverb() + ending;
+			part = getAdverb();
 			break;
 
 		case "verb":
-			return getVerb(mods.slice(1)).final + ending;
+			part = getVerb(mods.slice(1));
 			break;
 
 		case "amount":
-			return getAmount() + ending;
+			part = getAmount();
 			break;
 
 		default:
-			return element + ending;
+			part = new Word(element);
 			break;
 	}
+
+	if(ending) {
+		part.ending = ending;
+	}
+	return part;
 }
 
 function reparseElements(elements) {
 	// articles need to be done after the rest of the conversion
-
 	for(let idx = 0; idx < elements.length; idx++) {
 		let element = elements[idx];
 
-		if(element == "=article") {
-			let chosen = articles[getRandomInt(0, articles.length)];
-
-			if(chosen == "a") {
-				// articles should never be last or next together, should be fine to ignore those checks
-				let next = elements[idx+1];
-				if(vowels.indexOf(next.slice(0, 1)) != -1) {
-					// unsure of a way to check sounds, this should be ok *for now*
-					chosen = "an";
-				} else if(next.slice(-1) == "s") {
-					chosen = "the";
+		if(typeof element === "string") {
+			if(element == "=article") {
+				let art = elements[idx] = new Article(articles[getRandomInt(0, articles.length)]);
+				if(art.word == "a") {
+					// loop through all elements for plural nouns, set to "the" if any are found
+					for(let idxx = 0; idxx < elements.length; idxx++) {
+						if(elements[idxx].constructor.name == "Noun") {
+							if(elements[idxx].plural) {
+								art.word = art.final = "the";
+							}
+						}
+					}
 				}
 			}
-
-			elements[idx] = chosen;
+			continue;
 		}
 	}
 
@@ -292,15 +303,21 @@ function getPhraseElements() {
 
 function getPhrase() {
 	let elements = getPhraseElements();
-	let preFinal = [];
-	var final = "";
-	
+	let parts = [];
+
 	elements.map(function(element) {
-		preFinal.push(parseElement(element))
+		parts.push(parseElement(element));
 	});
 
-	final = reparseElements(preFinal).join(" ");
+	parts = reparseElements(parts);
 
+	let final = [];
+	parts.map(function(part) {
+		final.push(part.modified);
+	});
+
+	final = final.join(" ");
+	
 	if(!getRandomInt(0, 200)) {
 		let newFinal = "";
 		for(let idx = 0; idx < final.length; idx++) {
